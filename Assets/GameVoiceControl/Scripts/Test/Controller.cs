@@ -20,13 +20,10 @@ public class Controller : MonoBehaviour {
     public string CmdRotateToTheLeft = "rotate to the left";
     public string CmdRotateToTheRight = "rotate to the right";
     public string CmdRotateUp = "rotate up";
-    public string CmdPeri;
-    public string CmdLukaSay;
     public string CmdRotateDown = "rotate down";
+    public string Cmxoayxuong = "hi siri";
     public string CmdStop = "stop";
-    public AudioSource audioSource;
-    public AudioClip Say;
-    public AudioClip Say1;
+
     private Around rotateTo = Around.stop;
 
     private float _speed = 0.5f;
@@ -54,18 +51,8 @@ public class Controller : MonoBehaviour {
             rotateTo = Around.up;
         if ( result.Contains( CmdRotateDown ) )
             rotateTo = Around.down;
-        if (result.Contains( CmdPeri ))
-        {
-             audioSource.clip = Say;
-             audioSource.Play();
+             if ( result.Contains( Cmxoayxuong ) )
             Debug.Log("Có");
-        }
-        if (result.Contains( CmdLukaSay ))
-        {
-             audioSource.clip = Say1;
-             audioSource.Play();
-            Debug.Log("Có");
-        }
         if ( result.Contains( CmdRotateToTheLeft ) )
             rotateTo = Around.left;
         if ( result.Contains( CmdRotateToTheRight ) )
